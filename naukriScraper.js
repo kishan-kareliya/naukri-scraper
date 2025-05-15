@@ -112,8 +112,7 @@ async function startBot(jobRole, jobLocation, limit) {
 
             console.log(`✅ Extracted job ${i + 1}: ${job.title}`);
 
-            const userAgent = new UserAgent();
-            job.rawDescription = await extractJobDescriptionFromUrl(browser, userAgent, job.link);
+            job.rawDescription = await extractJobDescriptionFromUrl(browser, job.link);
             jobs.push(job);
         }
         browser.close();
