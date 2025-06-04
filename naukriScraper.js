@@ -101,13 +101,17 @@ async function startBot(jobRole, jobLocation, limit) {
             const title = $(element).find('h2 > a.title').text().trim() || '';
             const company = $(element).find('.comp-name').text().trim() || '';
             const location = $(element).find('.locWdth').text().trim() || '';
+            const source = "naukri";
             const link = $(element).find('h2 > a.title').attr('href') || '';
+            const postedAt = $(element).find('.job-post-day').text().trim() || '';
 
             const job = {
                 title,
+                source,
                 company,
                 location,
-                link
+                link,
+                postedAt
             };
 
             console.log(`✅ Extracted job ${i + 1}: ${job.title}`);
