@@ -10,6 +10,7 @@ exports.handler = async (event) => {
         const result = await startBot(jobRole, jobLocation, limit);
         return {
             statusCode: 200,
+            source: "Naukri",
             body: JSON.stringify({ message: 'Scraping Complete', result }),
         };
     } catch (err) {
